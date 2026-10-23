@@ -75,6 +75,12 @@ section>h2{font-size:1.05rem;font-family:var(--mono);font-weight:500;letter-spac
 .timeline .yr{font:500 .85rem/1.6 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
 .timeline small{display:block;color:var(--muted);font-size:.95rem}
 
+.grants{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.grants li{display:grid;grid-template-columns:13rem minmax(0,1fr);gap:1rem}
+.grants .g{font:500 .85rem/1.6 var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
+.grants li>span:last-child{color:var(--muted);font-size:.97rem}
+.grants i{color:var(--ink)}
+
 .pubs{display:grid;gap:1.6rem}
 .pubs h3{font:500 .78rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .pubs ol{margin:.7rem 0 0;padding:0;list-style:none;display:grid;gap:.9rem}
@@ -94,7 +100,7 @@ footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);paddi
   header{grid-template-columns:minmax(0,1fr)}
   header .photo{width:9rem;order:-1}
   section{grid-template-columns:minmax(0,1fr)}
-  .timeline li{grid-template-columns:minmax(0,1fr);gap:0}
+  .timeline li,.grants li{grid-template-columns:minmax(0,1fr);gap:0}
 }
 </style>
 </head>
@@ -198,6 +204,17 @@ footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);paddi
       <li><span class="yr">2015 – 2020</span><span>PhD, Cancer Biology<small>Zhejiang University</small></span></li>
       <li><span class="yr">2010 – 2015</span><span>Bachelor of Medicine, Preventive Medicine<small>Wuhan University</small></span></li>
     </ol>
+  </div>
+</section>
+
+<section id="support">
+  <h2>Research support</h2>
+  <div class="body">
+    <ul class="grants">
+      <li><span class="g">NIH/NIDCR R01 DE017684</span><span><i>Inhibition of bone formation by TNF/NF-κB signaling</i><br>PI: Cun-Yu Wang · Role: Key personnel<br>In vivo disease models and multi-omics analyses</span></li>
+      <li><span class="g">NIH/NIDCR R01 DE019412</span><span><i>Immune cytokines promote oral bone loss through IKK</i><br>PI: Cun-Yu Wang · Role: Key personnel<br>Drug discovery and multi-omics analyses</span></li>
+      <li><span class="g">NIH/NIDCR R01 DE029200</span><span><i>Molecular control of bone development and inflammation by FBXO11</i><br>PI: Jia Chang · Role: Key personnel<br>In vivo disease models and mechanistic studies</span></li>
+    </ul>
   </div>
 </section>
 
