@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <meta property="og:title" content="Bing Han, PhD">
 <meta property="og:description" content="Cancer biologist studying epigenetic and RNA-level regulation of colorectal cancer.">
 <title>Bing Han, PhD</title>
@@ -13,20 +13,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: single reading column (~68ch) with a narrow left rail for years/labels; stacks to one column on phones.
-   Palette borrows from H&E staining: hematoxylin violet as the accent, eosin pink used once. */
+   Palette borrows from H&E staining: hematoxylin violet as the accent, eosin pink used once.
+   Single light look on a pale yellow ground (the owner's choice); photo and figure are transparent and sit directly on it. */
 :root{
-  --paper:#F7F7FA; --ink:#1B1C27; --muted:#5D5F72; --rule:#DCDCE6;
-  --accent:#4A3C8C; --eosin:#C2457A; --card:#FFFFFF; --fig:#FFFFFF;
+  --paper:#FBF5DF; --ink:#24211A; --muted:#6A6350; --rule:#E6DCBC;
+  --accent:#4A3C8C; --eosin:#C2457A; --card:#FFFDF4;
   --display:"Spectral",Georgia,"Times New Roman",serif;
   --body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#14151D; --ink:#E8E8F0; --muted:#A3A4B8; --rule:#2C2D3B;
-  --accent:#AFA2F0; --eosin:#EE8FB5; --card:#1B1C27; --fig:#ECEDF3; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#14151D; --ink:#E8E8F0; --muted:#A3A4B8; --rule:#2C2D3B;
-  --accent:#AFA2F0; --eosin:#EE8FB5; --card:#1B1C27; --fig:#ECEDF3; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -49,8 +45,7 @@ header{display:grid;grid-template-columns:minmax(0,1fr) 11rem;gap:2rem;align-ite
 .role{font:400 1.3rem/1.45 var(--display);color:var(--muted);margin-top:.6rem;max-width:36ch}
 .links{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-top:1.4rem;font-size:.98rem}
 .place{margin-top:.9rem;color:var(--muted);font-size:.95rem}
-.photo{width:100%;height:auto;aspect-ratio:4/5;border-radius:4px;object-fit:cover;background:var(--rule);
-  display:grid;place-items:center;color:var(--muted);font:500 .75rem var(--mono)}
+.photo{width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;display:block}
 
 /* Sections */
 section{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1rem 2rem;border-top:1px solid var(--rule);padding-top:1.6rem}
@@ -59,8 +54,7 @@ section>h2{font-size:1.05rem;font-family:var(--mono);font-weight:500;letter-spac
 
 .thesis{font:400 1.55rem/1.35 var(--display);letter-spacing:-.005em}
 .thesis em{color:var(--accent);font-style:normal}
-/* The figure keeps a light ground in both themes: its labels and arrows are drawn in black. */
-.figure{margin:0;background:var(--fig);border:1px solid var(--rule);border-radius:4px;padding:.75rem}
+.figure{margin:0}
 .figure img{width:100%;height:auto;display:block}
 
 .themes{display:grid;gap:2rem}
@@ -118,7 +112,7 @@ footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);paddi
     </div>
     <p class="place">Los Angeles, California</p>
   </div>
-  <img class="photo" src="assets/headshot.jpg" alt="Portrait of Bing Han" width="640" height="800">
+  <img class="photo" src="assets/headshot.png" alt="Portrait of Bing Han" width="640" height="800">
 </header>
 
 <section id="research">
