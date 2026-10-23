@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Bing Han, PhD">
+<meta property="og:description" content="Cancer biologist studying epigenetic and RNA-level regulation of colorectal cancer.">
+<title>Bing Han, PhD</title>
+<meta name="description" content="Bing Han, PhD — cancer biologist working on epigenetic and epitranscriptomic regulation of colorectal cancer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column (~68ch) with a narrow left rail for years/labels; stacks to one column on phones.
+   Palette borrows from H&E staining: hematoxylin violet as the accent, eosin pink used once. */
+:root{
+  --paper:#F7F7FA; --ink:#1B1C27; --muted:#5D5F72; --rule:#DCDCE6;
+  --accent:#4A3C8C; --eosin:#C2457A; --card:#FFFFFF; --fig:#FFFFFF;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#14151D; --ink:#E8E8F0; --muted:#A3A4B8; --rule:#2C2D3B;
+  --accent:#AFA2F0; --eosin:#EE8FB5; --card:#1B1C27; --fig:#ECEDF3; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#14151D; --ink:#E8E8F0; --muted:#A3A4B8; --rule:#2C2D3B;
+  --accent:#AFA2F0; --eosin:#EE8FB5; --card:#1B1C27; --fig:#ECEDF3; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:62rem;margin:0 auto;padding-block:3.5rem 4rem;display:grid;gap:3.5rem}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;line-height:1.2}
+p{margin:0}
+.gene{font-style:italic}
+.label{font:500 .75rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Header */
+header{display:grid;grid-template-columns:minmax(0,1fr) 11rem;gap:2rem;align-items:start}
+.name{font-size:clamp(2.4rem,6vw,3.4rem);letter-spacing:-.01em}
+.role{font:400 1.3rem/1.45 var(--display);color:var(--muted);margin-top:.6rem;max-width:36ch}
+.links{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-top:1.4rem;font-size:.98rem}
+.place{margin-top:.9rem;color:var(--muted);font-size:.95rem}
+.photo{width:100%;aspect-ratio:4/5;border-radius:4px;object-fit:cover;background:var(--rule);
+  display:grid;place-items:center;color:var(--muted);font:500 .75rem var(--mono)}
+
+/* Sections */
+section{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1rem 2rem;border-top:1px solid var(--rule);padding-top:1.6rem}
+section>h2{font-size:1.05rem;font-family:var(--mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:.25rem}
+.body{display:grid;gap:1.25rem;min-width:0;max-width:68ch}
+
+.thesis{font:400 1.55rem/1.35 var(--display);letter-spacing:-.005em}
+.thesis em{color:var(--accent);font-style:normal}
+/* The figure keeps a light ground in both themes: its labels and arrows are drawn in black. */
+.figure{margin:0;background:var(--fig);border:1px solid var(--rule);border-radius:4px;padding:.75rem}
+.figure img{width:100%;height:auto;display:block}
+
+.themes{display:grid;gap:2rem}
+.theme{display:grid;gap:.6rem}
+.theme h3{font-size:1.3rem}
+.theme .when{font:500 .78rem/1.4 var(--mono);color:var(--muted)}
+.theme ul{margin:.2rem 0 0;padding-left:1.1rem;display:grid;gap:.35rem}
+.theme li::marker{color:var(--eosin)}
+.cite{font-size:.95rem;color:var(--muted)}
+.cite i{color:var(--ink)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem}
+.skills h3{font:600 1rem/1.3 var(--body);margin-bottom:.4rem}
+.skills p{color:var(--muted);font-size:.98rem}
+
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.timeline li{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem}
+.timeline .yr{font:500 .85rem/1.6 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.timeline small{display:block;color:var(--muted);font-size:.95rem}
+
+.pubs{display:grid;gap:1.6rem}
+.pubs h3{font:500 .78rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pubs ol{margin:.7rem 0 0;padding:0;list-style:none;display:grid;gap:.9rem}
+.pubs li{font-size:.97rem;line-height:1.5}
+.pubs .t{display:block;color:var(--ink);font-weight:600}
+.pubs .a{display:block;color:var(--muted)}
+.pubs .me{color:var(--ink);font-weight:600}
+.pubs .j{display:block;color:var(--muted)}
+.pubs .j i{color:var(--ink)}
+.tag{display:inline-block;font:500 .7rem/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;
+  color:var(--accent);border:1px solid currentColor;border-radius:3px;padding:.25rem .4rem;margin-left:.35rem;vertical-align:.12em}
+
+footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);padding-top:1.4rem}
+
+@media (max-width:720px){
+  .wrap{padding-block:2rem 3rem;gap:2.5rem}
+  header{grid-template-columns:minmax(0,1fr)}
+  header .photo{width:9rem;order:-1}
+  section{grid-template-columns:minmax(0,1fr)}
+  .timeline li{grid-template-columns:minmax(0,1fr);gap:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1 class="name">Bing Han, PhD</h1>
+    <p class="role">Cancer biologist studying how epigenetic and RNA-level regulation shapes colorectal cancer, from mechanism to therapeutic opportunity.</p>
+    <div class="links">
+      <a href="https://scholar.google.com/citations?user=RctElHEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/bing-han-bh792" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hanbingbing0102@gmail.com">hanbingbing0102@gmail.com</a>
+    </div>
+    <p class="place">Los Angeles, California</p>
+  </div>
+  <img class="photo" src="assets/headshot.jpg" alt="Portrait of Bing Han" width="640" height="800">
+</header>
+
+<section id="research">
+  <h2>Research</h2>
+  <div class="body">
+    <p class="thesis">Decoding epigenetic mechanisms in colorectal cancer: <em>from disease biology to therapeutic opportunities.</em></p>
+    <p>Over the past decade my work has followed one question across three layers of gene regulation: how tumors rewire the control of gene expression, and where that rewiring can be targeted. I started with RNA modification in intestinal stem cells, moved to chromatin regulation at the interface of the gut microbiome and tumor immunity, and have carried this into drug discovery, cancer vaccine studies and large-scale analysis of public data.</p>
+    <figure class="figure">
+      <img src="assets/research-outline.png" alt="Research overview: colorectal cancer progression from benign to malignant, with epigenetic regulation at the DNA, histone, RNA and non-coding RNA levels shaping proliferation, stemness, immunity and metastasis, and a BMI1 inhibitor screening funnel toward therapy" width="2400" height="1680">
+    </figure>
+  </div>
+</section>
+
+<section id="themes">
+  <h2>Main lines</h2>
+  <div class="body themes">
+
+    <article class="theme">
+      <p class="when">2015 – 2020 · Zhejiang University · Yale University</p>
+      <h3>RNA modification and intestinal stemness</h3>
+      <p>I showed that the m<sup>6</sup>A reader YTHDF1 boosts translation of Wnt pathway components and so amplifies Wnt-driven stemness in the intestine and colorectal tumors. This established m<sup>6</sup>A reading as a control point in intestinal tumor initiation and led to collaborative work on YTHDF1 in DNA damage, metabolism and transcription.</p>
+      <ul>
+        <li class="cite"><i>EMBO Reports</i> 2020, first author</li>
+        <li class="cite"><i>Cancer Letters</i> 2021, first-author review of m<sup>6</sup>A reader proteins in cancer</li>
+        <li class="cite"><i>Science Advances</i> 2025; <i>Nature Communications</i> 2023; <i>Science Advances</i> 2023, contributing author</li>
+      </ul>
+    </article>
+
+    <article class="theme">
+      <p class="when">2021 – 2026 · University of California, Los Angeles</p>
+      <h3>Microbes, chromatin and the tumor immune environment</h3>
+      <p>As a postdoctoral researcher I built <span class="gene">Apc</span>-mutant mouse models of <i>Fusobacterium nucleatum</i>-driven colorectal cancer and used them to study how a gut bacterium reshapes chromatin regulation in tumor cells and the immune cells around them. The work combined in vivo models with single-cell RNA-seq, single-cell ATAC-seq, ChIP-seq and mass cytometry.</p>
+      <ul>
+        <li class="cite"><i>Fusobacterium nucleatum: Methods and Protocols</i>, first-author book chapter on the mouse model</li>
+        <li class="cite"><i>Nature Communications</i> 2024, KMT2D deficiency and the Fanconi anemia/BRCA pathway, contributing author</li>
+      </ul>
+    </article>
+
+    <article class="theme">
+      <p class="when">2021 – present · UCLA · industry collaboration · independent project</p>
+      <h3>From mechanism to therapeutic opportunity</h3>
+      <p>Alongside the mechanistic work I have led projects aimed directly at treatment, each built around in vivo models and readouts that predict response.</p>
+      <ul>
+        <li><b>Small-molecule discovery.</b> Screening a series of BMI1 inhibitor analogs through a tiered biomarker funnel, from cell-based assays to in vivo efficacy in mouse tumor models.</li>
+        <li><b>Cancer vaccines.</b> Preclinical in vivo evaluation of a KRAS-targeted mRNA vaccine in collaboration with a biotechnology company.</li>
+        <li><b>Computational target assessment.</b> An independent project using public CRISPR screens (DepMap) and published perturbation transcriptomes to ask what sets a cancer cell's dependence on the chromatin regulator KMT2D across tumor types.</li>
+      </ul>
+    </article>
+
+    <article class="theme">
+      <p class="when">Beyond cancer</p>
+      <h3>Bone metabolism and other collaborations</h3>
+      <p>A project on bone metabolism that started from a clinical observation and moved into mechanistic studies in mouse models, plus collaborative work on bone regeneration materials, pulmonary fibrosis, environmental toxicology and placental biology.</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="expertise">
+  <h2>Expertise</h2>
+  <div class="body skills">
+    <div>
+      <h3>In vivo cancer models</h3>
+      <p>Genetically engineered mouse models, syngeneic, CDX and PDX models, microbe-colonized colorectal cancer models.</p>
+    </div>
+    <div>
+      <h3>Cell and molecular biology</h3>
+      <p>CRISPR editing, organoids, flow cytometry and CyTOF, IHC and immunofluorescence.</p>
+    </div>
+    <div>
+      <h3>Genomics and data analysis</h3>
+      <p>Bulk and single-cell RNA-seq, single-cell ATAC-seq, ChIP-seq, TCGA and DepMap analysis in R and Python.</p>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <h2>Training</h2>
+  <div class="body">
+    <ol class="timeline">
+      <li><span class="yr">2021 – 2026</span><span>Postdoctoral researcher<small>University of California, Los Angeles</small></span></li>
+      <li><span class="yr">2019 – 2020</span><span>Visiting scholar<small>Yale University</small></span></li>
+      <li><span class="yr">2015 – 2020</span><span>PhD, Cancer Biology<small>Zhejiang University</small></span></li>
+      <li><span class="yr">2010 – 2015</span><span>Bachelor of Medicine, Preventive Medicine<small>Wuhan University</small></span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <div class="body pubs">
+
+    <div>
+      <h3>First, co-first and corresponding author</h3>
+      <ol>
+        <li><span class="t">Modeling <i>Fusobacterium nucleatum</i>-driven colorectal cancer in <span class="gene">Apc</span>-mutant mice</span>
+          <span class="a"><span class="me">Han B</span>, Liu W, Chen Y, Chen YW, Ton-That H, Chang J, Wang CY.</span>
+          <span class="j"><i>Fusobacterium nucleatum: Methods and Protocols</i>. ISBN 978-1-0716-5387-6</span></li>
+        <li><span class="t">Lactic acid and lactylation in the progression of pulmonary fibrosis<span class="tag">Co-corresponding</span></span>
+          <span class="a">Wang F, Jiang M, Zhu L, Liu J, Tang J, Jin X, Liu H, Cheng Z, Wang Z, Liu R, Xu H, <span class="me">Han B</span>, Cheng D, Zhao X.</span>
+          <span class="j"><i>BIO Integration</i> 2026; 7(1):975 · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Lactic+Acid+and+Lactylation+in+the+Progression+of+Pulmonary+Fibrosis" target="_blank" rel="noopener">Find article</a></span></li>
+        <li><span class="t">Decoding m<sup>6</sup>A mRNA methylation by reader proteins in cancer</span>
+          <span class="a"><span class="me">Han B</span>, Wei S, Li F, Zhang J, Li Z, Gao X.</span>
+          <span class="j"><i>Cancer Letters</i> 2021; 518:256–265 · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Decoding+m6A+mRNA+methylation+by+reader+proteins+in+cancer" target="_blank" rel="noopener">PubMed</a></span></li>
+        <li><span class="t">YTHDF1-mediated translation amplifies Wnt-driven intestinal stemness</span>
+          <span class="a"><span class="me">Han B</span>, Yan S, Wei S, Xiang J, Liu K, Chen Z, Bai R, Sheng J, Xu Z, Gao X.</span>
+          <span class="j"><i>EMBO Reports</i> 2020 · <a href="https://doi.org/10.15252/embr.201949229" target="_blank" rel="noopener">doi:10.15252/embr.201949229</a></span></li>
+        <li><span class="t">Silica nanoparticle releases SIRT6-induced epigenetic silencing of follistatin<span class="tag">Co-first</span></span>
+          <span class="a">Zhang L, <span class="me">Han B</span>, Xiang J, Liu K, Dong H, Gao X.</span>
+          <span class="j"><i>International Journal of Biochemistry and Cell Biology</i> 2018; 95:27–34 · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Silica+nanoparticle+releases+SIRT6-induced+epigenetic+silencing+of+follistatin" target="_blank" rel="noopener">PubMed</a></span></li>
+        <li><span class="t">Hypoxia-inducible microRNA-218 inhibits trophoblast invasion by targeting LASP1: implications for preeclampsia development<span class="tag">Co-first</span></span>
+          <span class="a">Fang M, Du H, <span class="me">Han B</span>, Xia G, Shi X, Zhang F, Fu Q, Zhang T.</span>
+          <span class="j"><i>International Journal of Biochemistry and Cell Biology</i> 2017; 87:95–103 · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Hypoxia-inducible+microRNA-218+inhibits+trophoblast+invasion+by+targeting+LASP1" target="_blank" rel="noopener">PubMed</a></span></li>
+      </ol>
+    </div>
+
+    <div>
+      <h3>Contributing author</h3>
+      <ol>
+        <li><span class="t">Self-assembled nanoclay gel with spheroid MSC-derived exosome mimetics to integrate demineralized bone matrix and Noggin-targeting miRNA for synergistic osteogenesis</span>
+          <span class="a">Xu C, Li Z, Kang M, Sheng R, <span class="me">Han B</span>, Chen Y, Aghaloo T, Lee M.</span>
+          <span class="j"><i>Advanced Functional Materials</i> 2026: e75272</span></li>
+        <li><span class="t">Nuclear accumulation of YTHDF1 regulates mRNA splicing in the DNA damage response</span>
+          <span class="a">Hou J, Gao Y, <span class="me">Han B</span>, Yan S, Wei S, Gao X.</span>
+          <span class="j"><i>Science Advances</i> 2025; 11:eado7660 · <a href="https://doi.org/10.1126/sciadv.ado7660" target="_blank" rel="noopener">doi:10.1126/sciadv.ado7660</a></span></li>
+        <li><span class="t">Histone-methyltransferase KMT2D deficiency impairs the Fanconi anemia/BRCA pathway upon glycolytic inhibition in squamous cell carcinoma</span>
+          <span class="a">Liu W, Cao H, Wang J, Elmusrati A, <span class="me">Han B</span>, Chen W, Zhou P, Li X, Keysar S, Jimeno A, Wang CY.</span>
+          <span class="j"><i>Nature Communications</i> 2024; 15:6755 · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=KMT2D+deficiency+impairs+the+Fanconi+Anemia%2FBRCA+pathway+upon+glycolytic+inhibition" target="_blank" rel="noopener">PubMed</a></span></li>
+        <li><span class="t">7SK methylation by METTL3 promotes transcriptional activity</span>
+          <span class="a">Perez-Pepe M, Desotell AW, Li H, Li W, <span class="me">Han B</span>, Lin Q, Klein DE, Liu Y, Goodarzi H, Alarcón CR.</span>
+          <span class="j"><i>Science Advances</i> 2023; 9:eade7500 · <a href="https://doi.org/10.1126/sciadv.ade7500" target="_blank" rel="noopener">doi:10.1126/sciadv.ade7500</a></span></li>
+        <li><span class="t">Adipocyte YTH N6-methyladenosine RNA-binding protein 1 protects against obesity by promoting white adipose tissue beiging in male mice</span>
+          <span class="a">Yan S, Zhou X, Wu C, Gao Y, Qian Y, Hou J, Xie R, <span class="me">Han B</span>, Chen Z, Wei S, Gao X.</span>
+          <span class="j"><i>Nature Communications</i> 2023; 14:1379 · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Adipocyte+YTH+N6-methyladenosine+RNA-binding+protein+1+protects+against+obesity" target="_blank" rel="noopener">PubMed</a></span></li>
+        <li><span class="t">The decreased permittivity of zebrafish embryos culture medium by magnetic fields did not affect early development of zebrafish embryos</span>
+          <span class="a">Su L, Zhu L, Liu Z, Lou J, <span class="me">Han B</span>, Lin C, Li D, Qian J, Zhao X, Chen G.</span>
+          <span class="j"><i>Ecotoxicology and Environmental Safety</i> 2020; 193:110350 · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=decreased+permittivity+of+zebrafish+embryos+culture+medium+by+magnetic+fields" target="_blank" rel="noopener">PubMed</a></span></li>
+        <li><span class="t">The emerging role of follistatin under stresses and its implications in diseases</span>
+          <span class="a">Zhang L, Liu K, <span class="me">Han B</span>, Xu Z, Gao X.</span>
+          <span class="j"><i>Gene</i> 2018; 639:111–116 · <a href="https://pubmed.ncbi.nlm.nih.gov/?term=The+emerging+role+of+follistatin+under+stresses+and+its+implications+in+diseases" target="_blank" rel="noopener">PubMed</a></span></li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2026 Bing Han · Full and current list on <a href="https://scholar.google.com/citations?user=RctElHEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></footer>
+
+</div>
+</body>
+</html>
