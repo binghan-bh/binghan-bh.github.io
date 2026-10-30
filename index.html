@@ -204,10 +204,13 @@ footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);paddi
         <article class="theme">
           <p class="when">2026 · independent · public data only</p>
           <h3>Selection or adaptation under neoadjuvant PD-1 blockade</h3>
-          <p>Paired single-cell samples from 22 colorectal tumors before and after anti-PD-1, decomposed into shifts in which cells are present against changes in what cells express. Tumor epithelial cells fall by about 40% and stromal cells double, yet roughly three fifths of the gene-level change happens inside cell states rather than between them. The same analysis also measures what the usual single-cell test costs: on data built to contain no effect, a cell-level rank-sum calls 3,324 genes significant after Bonferroni correction where a patient-level test calls none, and that reproduces in an independent cohort.</p>
+          <p>Paired single-cell samples from 22 colorectal tumors before and after anti-PD-1, decomposed into shifts in which cells are present against changes in what cells express. Tumor epithelial cells fall by about 40% and stromal cells double, yet roughly three fifths of the gene-level change happens inside cell states rather than between them, led by T cells in 12 of 22 patients.</p>
+          <p>The pre-registered specificity control then failed: adjacent normal tissue splits the same way and changes as much, and nothing in this cohort separates a real systemic effect from a generic property of paired timepoints or from shared batch drift. The measurement stands; the attribution does not, and I report it that way.</p>
+          <p>The second half of the project measures what the usual single-cell test costs. On data built to contain no effect, a cell-level rank-sum calls 3,324 genes significant after Bonferroni correction where a patient-level test on the same cells calls none, and the count tracks how many cells were pooled rather than any signal. That one reproduces in an independent cohort, and it is the result I would defend first.</p>
           <ul>
             <li class="cite"><a href="assets/Bing_Han_single_cell_project.pdf">One-page summary (PDF)</a> — question, data, numbers, and what it does not claim</li>
             <li class="cite">Pre-registered before the data was downloaded; the validation cohort was opened once and the pre-registered comparison proved impossible there, which is recorded rather than worked around</li>
+            <li class="cite">The specificity control that undercut the first finding was pre-registered to be able to do exactly that</li>
           </ul>
         </article>
 
