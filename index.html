@@ -60,6 +60,7 @@ section>h2{font-size:1.05rem;font-family:var(--mono);font-weight:500;letter-spac
 .themes{display:grid;gap:2rem}
 .theme{display:grid;gap:.6rem}
 .theme h3{font-size:1.3rem}
+.note{color:var(--muted);font-size:.95rem;max-width:68ch}
 .theme .when{font:500 .78rem/1.4 var(--mono);color:var(--muted)}
 .theme ul{margin:.2rem 0 0;padding-left:1.1rem;display:grid;gap:.35rem}
 .theme li::marker{color:var(--eosin)}
@@ -115,6 +116,7 @@ footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);paddi
       <a href="https://scholar.google.com/citations?user=RctElHEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
       <a href="https://www.linkedin.com/in/bing-han-bh792" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:hanbingbing0102@gmail.com">hanbingbing0102@gmail.com</a>
+        <a href="assets/Bing_Han_resume.pdf">Résumé (PDF)</a>
     </div>
     <p class="place">Los Angeles, California</p>
   </div>
@@ -195,7 +197,35 @@ footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);paddi
   </div>
 </section>
 
-<section id="training">
+<section id="code">
+      <h2>Computational projects</h2>
+      <div class="body themes">
+
+        <article class="theme">
+          <p class="when">2026 · independent · public data only</p>
+          <h3>Selection or adaptation under neoadjuvant PD-1 blockade</h3>
+          <p>Paired single-cell samples from 22 colorectal tumors before and after anti-PD-1, decomposed into shifts in which cells are present against changes in what cells express. Tumor epithelial cells fall by about 40% and stromal cells double, yet roughly three fifths of the gene-level change happens inside cell states rather than between them. The same analysis also measures what the usual single-cell test costs: on data built to contain no effect, a cell-level rank-sum calls 3,324 genes significant after Bonferroni correction where a patient-level test calls none, and that reproduces in an independent cohort.</p>
+          <ul>
+            <li class="cite"><a href="assets/Bing_Han_single_cell_project.pdf">One-page summary (PDF)</a> — question, data, numbers, and what it does not claim</li>
+            <li class="cite">Pre-registered before the data was downloaded; the validation cohort was opened once and the pre-registered comparison proved impossible there, which is recorded rather than worked around</li>
+          </ul>
+        </article>
+
+        <article class="theme">
+          <p class="when">2025 – present · independent · public data only</p>
+          <h3>What sets a tumor cell's dependency on a chromatin regulator</h3>
+          <p>Nineteen KMT2D perturbation contrasts from fourteen GEO series, integrated with DepMap CRISPR screens across more than a thousand cell lines. The requirement tracks epithelial differentiation state rather than lineage or mutation, with two independent data types converging on the same axis. The ceiling on predictive power is reported explicitly instead of being presented as a signature.</p>
+          <ul>
+            <li class="cite"><a href="assets/Bing_Han_kmt2d_project.pdf">One-page summary (PDF)</a></li>
+          </ul>
+        </article>
+
+        <p class="note">Both are version-controlled and unit tested, pre-register each analysis before it is run, and keep a record of the claims my own controls refuted. I designed the studies and the statistical approach and interpreted the results; implementation was AI-assisted. Code and the full analysis plans are available on request.</p>
+
+      </div>
+    </section>
+
+    <section id="training">
   <h2>Training</h2>
   <div class="body">
     <ol class="timeline">
