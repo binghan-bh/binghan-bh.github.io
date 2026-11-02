@@ -96,6 +96,21 @@ section>h2{font-size:1.05rem;font-family:var(--mono);font-weight:500;letter-spac
 
 footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);padding-top:1.4rem}
 
+/* Section navigation: sticky bar across the top, scrolls sideways on phones */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+section{scroll-margin-top:3.5rem}
+.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--paper);border-bottom:1px solid var(--rule);
+  margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)));
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--paper)}
+.topnav ul{max-width:62rem;margin:0 auto;padding:0;list-style:none;display:flex;gap:1.6rem;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.topnav ul::-webkit-scrollbar{display:none}
+.topnav a{display:block;padding:.9rem 0 .75rem;font:500 .74rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;border-bottom:2px solid transparent}
+.topnav a:hover{color:var(--ink)}
+.topnav a[aria-current="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+
 @media (max-width:720px){
   .wrap{padding-block:2rem 3rem;gap:2.5rem}
   header{grid-template-columns:minmax(0,1fr)}
@@ -107,6 +122,18 @@ footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);paddi
 </style>
 </head>
 <body>
+<nav class="topnav" aria-label="Sections">
+  <ul>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#themes">Main lines</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#code">Computational projects</a></li>
+    <li><a href="#training">Training</a></li>
+    <li><a href="#support">Research support</a></li>
+    <li><a href="#publications">Publications</a></li>
+  </ul>
+</nav>
+
 <div class="wrap">
 
 <header>
@@ -317,5 +344,24 @@ footer{color:var(--muted);font-size:.9rem;border-top:1px solid var(--rule);paddi
 <footer>© 2026 Bing Han · Full and current list on <a href="https://scholar.google.com/citations?user=RctElHEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></footer>
 
 </div>
+<script>
+// Highlight the section currently in view
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.topnav a'));
+  if(!('IntersectionObserver' in window)) return;
+  var byId={}; links.forEach(function(a){byId[a.getAttribute('href').slice(1)]=a;});
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.removeAttribute('aria-current');});
+        var a=byId[e.target.id]; if(a){a.setAttribute('aria-current','true');
+          var ul=a.closest('ul'), r=a.getBoundingClientRect(), u=ul.getBoundingClientRect();
+          if(r.left<u.left||r.right>u.right) ul.scrollLeft+=r.left-u.left-16;}
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  Object.keys(byId).forEach(function(id){var s=document.getElementById(id); if(s) obs.observe(s);});
+})();
+</script>
 </body>
 </html>
